@@ -35,11 +35,14 @@ public with sharing class AdoptionTriggerHandler {
 
     for(Adoption__c existingAdoption: existingAdoptions) {
         List<Adoption__c> newAdoptionsWithSameAcc = newAdoptionsByAccountId.get(existingAdoption.Account__c);
-        for(Adoption__c newAdoptionWithSameAcc : newAdoptionsWithSameAcc) {
+        if(newAdoptionsWithSameAcc != null) {
+            for(Adoption__c newAdoptionWithSameAcc : newAdoptionsWithSameAcc) {
             if(newAdoptionWithSameAcc.Animal__c.equals(existingAdoption.Animal__c)){
                 newAdoptionWithSameAcc.addError('This record is a duplicate!');
             }
+          }
         }
+        
     }
 }
 
