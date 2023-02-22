@@ -15,12 +15,13 @@
 trigger LeadDescriptionUpdatingTrigger on Lead (before insert) {
    
     for (Lead lead : Trigger.new) {
-        if (lead.Description == null) {
+       
             String sourceType = lead.LeadSource;
             if (sourceType != null) {
                 lead.Description = 'This Lead has been created via the "' + sourceType + '" channel.';
             }
-        }
+        
+        
     }
     
     
