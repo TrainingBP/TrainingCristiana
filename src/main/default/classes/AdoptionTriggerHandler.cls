@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Cristiana Jipa BearingPoint GmbH
  * @group             : 
- * @last modified on  : 02-20-2023
+ * @last modified on  : 02-21-2023
  * @last modified by  : Cristiana Jipa, BearingPoint GmbH
 **/
 
@@ -32,7 +32,13 @@ public with sharing class AdoptionTriggerHandler {
                                            WHERE Status__c = 'Active' AND 
                                            (Account__c IN : relevantAccountIds OR Animal__c IN : relevantAnimalIds)
                                            AND Id NOT IN : adoptionsFromTriggerIds];
+    
+    doTheCheck(existingAdoptions, newAdoptionsByAccountId);
+    
+}
 
+@TestVisible
+private static void doTheCheck(List<Adoption__c> existingAdoptions, Map<Id, List<Adoption__c>> newAdoptionsByAccountId ) {
     for(Adoption__c existingAdoption: existingAdoptions) {
         List<Adoption__c> newAdoptionsWithSameAcc = newAdoptionsByAccountId.get(existingAdoption.Account__c);
         if(newAdoptionsWithSameAcc != null) {
@@ -45,6 +51,5 @@ public with sharing class AdoptionTriggerHandler {
         
     }
 }
-
     
 }
