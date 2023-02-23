@@ -2,7 +2,7 @@
  * @description       : 
  * @author            : Cristiana Jipa BearingPoint GmbH
  * @group             : 
- * @last modified on  : 02-22-2023
+ * @last modified on  : 02-23-2023
  * @last modified by  : Cristiana Jipa, BearingPoint GmbH
 **/
 
@@ -13,16 +13,5 @@
 
 
 trigger LeadDescriptionUpdatingTrigger on Lead (before insert) {
-   
-    for (Lead lead : Trigger.new) {
-       
-            String sourceType = lead.LeadSource;
-            if (sourceType != null) {
-                lead.Description = 'This Lead has been created via the "' + sourceType + '" channel.';
-            }
-        
-        
-    }
-    
-    
-}
+    LeadDescriptionUpdatingTriggerHandler.handle(Trigger.new);
+  }
