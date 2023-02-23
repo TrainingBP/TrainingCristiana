@@ -11,7 +11,6 @@
 //source type. The text within the Description field will be populated according to the following pattern: 
 //This Lead has been created via the “SourceType” channel.
 
-
-trigger LeadDescriptionUpdatingTrigger on Lead (before insert) {
-    LeadDescriptionUpdatingTriggerHandler.handle(Trigger.new);
-  }
+trigger LeadTrigger on Lead (before insert) {
+    LeadTriggerHandler.updateLeadDecription(Trigger.new);
+}
