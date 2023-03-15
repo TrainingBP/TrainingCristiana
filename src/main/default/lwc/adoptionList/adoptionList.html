@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : Cristiana Jipa BearingPoint GmbH
+  @group             : 
+  @last modified on  : 03-02-2023
+  @last modified by  : Cristiana Jipa, BearingPoint GmbH
+-->
+<template>
+    <lightning-card title={labels.adoptionLabel}>
+        <p class="slds-p-horizontal_small">Card Body (custom component)</p>
+
+        <template for:each={adoptions} for:item="adoption">
+            <div key={adoption.Id}>
+                <p>{adoption.Animal__r.Name</p>
+                
+            </div>
+          
+        </template>
+    </lightning-card>
+</template>

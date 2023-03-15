@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : Cristiana Jipa BearingPoint GmbH
+  @group             : 
+  @last modified on  : 02-28-2023
+  @last modified by  : Cristiana Jipa, BearingPoint GmbH
+-->
+<apex:page standardController="Lead" tabStyle="lead" renderAs="pdf" >
+    <apex:form>
+        <apex:pageBlock title="Lead" mode ="detail">
+                
+            <apex:pageBlockSection title="Lead Detail Information" columns="1">
+
+                <apex:outputField value ="{!Lead.FirstName}"/>
+                <apex:outputField value ="{!Lead.LastName}"/>
+                <apex:outputField value ="{!Lead.Company}"/>
+                <apex:outputField value ="{!Lead.Status}"/>
+                <apex:outputField value ="{!Lead.Email}"/>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
+

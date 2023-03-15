@@ -1,0 +1,12 @@
+<!--
+  @description       : 
+  @author            : Cristiana Jipa BearingPoint GmbH
+  @group             : 
+  @last modified on  : 02-28-2023
+  @last modified by  : Cristiana Jipa, BearingPoint GmbH
+-->
+<apex:page id="InvoicePage" controller="InvoicePage_CC" renderAs="pdf">
+    {! newOpportunity.Account.Name}
+    {! newOpportunity.Amount}
+
+</apex:page>

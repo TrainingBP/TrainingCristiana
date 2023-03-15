@@ -1,0 +1,30 @@
+<!--
+  @description       : 
+  @author            : Cristiana Jipa BearingPoint GmbH
+  @group             : 
+  @last modified on  : 02-28-2023
+  @last modified by  : Cristiana Jipa, BearingPoint GmbH
+-->
+<apex:page standardController="Lead" tabStyle="lead" extensions="LeadSubmissionForm_CX">
+    <apex:form>
+        <apex:pageBlock title="Create New Lead" mode ="edit">
+            <apex:pageMessages />
+
+            <apex:pageBlockButtons>
+                <apex:commandButton value = "Save" action="{!save}"/>
+            </apex:pageBlockButtons>
+                
+            <apex:pageBlockSection title="Lead Detail Information" columns="1">
+
+                <apex:inputField value ="{!Lead.FirstName}"/>
+                <apex:inputField value ="{!Lead.LastName}"/>
+                <apex:inputField value ="{!Lead.Company}"/>
+                <apex:inputField value ="{!Lead.Status}"/>
+                <apex:inputField value ="{!Lead.Email}"/>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
